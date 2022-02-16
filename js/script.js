@@ -5,7 +5,7 @@ function titleClickHandler(event){
   console.log('Link was clicked!');
   event.preventDefault(); 
 
-/* [DONE] remove class 'active' from all article links  */
+  /* [DONE] remove class 'active' from all article links  */
 const activeLinks = document.querySelectorAll('.titles a.active');
 
 for(let activeLink of activeLinks){
@@ -79,7 +79,7 @@ console.log('links', links);
 
 for (let link of links) {
 link.addEventListener('click', titleClickHandler);
-}
+  }
 }
 
 generateTitleLinks();
