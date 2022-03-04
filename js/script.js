@@ -94,15 +94,14 @@ function generateTags() {
     for (let article of articles) {
 
         /* find tags wrapper */
-        const articleTags = article.querySelector(optArticleTagsSelector);
-        articleTags.innerHTML = '';
-        console.log('articleTags', articleTags);
+        const wrapper = article.querySelector(optArticleTagsSelector);
+        console.log('wrapper', wrapper);
 
         /* make html variable with empty string */
         let html = '';
 
         /* get tags from data-tags attribute */
-        const articleTags = article.getAttribute('tag');
+        const articleTags = article.getAttribute('data-tags');
         console.log(articleTag);
 
         /* split tags into array */
