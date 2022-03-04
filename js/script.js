@@ -108,8 +108,8 @@ function generateTags() {
     const articleTagsArray = articleTags.split(' ');
 
     /* START LOOP: for each tag */
-      for (let tag of articleTagsArray) {
-      console.log('tag', tag)
+    for (let tag of articleTagsArray) {
+        console.log('tag', tag);
 
       /* generate HTML of the link */
       const linkHTML = '<li><a href="#tag' + '-' + tag + '"><span>' + tag + '</span></a></li>';
@@ -242,7 +242,7 @@ function authorClickHandler(event) {
     authorLink.classList.remove('active');
 
     /* END LOOP: for each active tag link */
-   }
+  }
 
   /* find all author links with "href" attribute equal to the "href" constant */
   const hrefLinks = document.querySelectorAll('a[href="' + href + '"]');
@@ -263,7 +263,6 @@ function authorClickHandler(event) {
 function addClickListenersToAuthors() {
   /* find all links to authors */
   const links = document.querySelector('a[href^"#author-"]');
-  console.log(linksToAuthors)
 
   /* START LOOP: for each link */
   for (let link of links) {
