@@ -179,8 +179,8 @@ function addClickListenersToTags() {
   /* find all links to tags */
   const allTagList = document.querySelectorAll('a[href^="#tag-"]');
 
-    /* START LOOP: for each link */
-    for (let allTagElement of allTagList) {
+  /* START LOOP: for each link */
+  for (let allTagElement of allTagList) {
     /* add tagClickHandler as event listener for that link */
     allTagElement.addEventListener('click', tagClickHandler);
 
@@ -207,14 +207,7 @@ function generateAuthors() {
 
     /* get author from data-author attribute */
     const articleAuthors = article.getAttribute('data-author');
-      console.log(articleAuthors);
-
-    /* generate HTML of the link */
-    const linkHTMLData = { authorName: articleAuthor };
-    const linkHTML = templates.authorLink(linkHTMLData);
-
-    /* add generated code to html variable */
-    html = html + linkHTML;
+    console.log(articleAuthors);
 
     /* insert HTML of all the links into the tags wrapper */
     authorWrapper.innerHTML = html;
