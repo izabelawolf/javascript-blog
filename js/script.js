@@ -177,12 +177,12 @@ function tagClickHandler(event) {
 
 function addClickListenersToTags() {
   /* find all links to tags */
-  const links = document.querySelector('a[href^="#tag-"]');
+  const allTagList = document.querySelectorAll('a[href^="#tag-"]');
 
-  /* START LOOP: for each link */
-  for (let link of links) {
+    /* START LOOP: for each link */
+    for (let allTagElement of allTagList) {
     /* add tagClickHandler as event listener for that link */
-    link.addEventListener('click', tagClickHandler);
+    allTagElement.addEventListener('click', tagClickHandler);
 
     /* END LOOP: for each link */
   }
@@ -207,7 +207,14 @@ function generateAuthors() {
 
     /* get author from data-author attribute */
     const articleAuthors = article.getAttribute('data-author');
-    console.log(articleAuthors);
+      console.log(articleAuthors);
+
+    /* generate HTML of the link */
+    const linkHTMLData = { authorName: articleAuthor };
+    const linkHTML = templates.authorLink(linkHTMLData);
+
+    /* add generated code to html variable */
+    html = html + linkHTML;
 
     /* insert HTML of all the links into the tags wrapper */
     authorWrapper.innerHTML = html;
@@ -265,7 +272,7 @@ function addClickListenersToAuthors() {
   const links = document.querySelector('a[href^"#author-"]');
 
   /* START LOOP: for each link */
-  for (let link in links){
+  for (let link of links) {
     /* add authorClickHandler as event listener for that link */
     link.addEventListener('click', authorClickHandler);
 
