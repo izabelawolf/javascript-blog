@@ -49,8 +49,8 @@ function generateTitleLinks(customSelector = ''){
   titleList.innerHTML = '';
   console.log('titleList', titleList);
 
-    /* for each article */
-    const articles = document.querySelectorAll(optArticleSelector + customSelector);
+  /* for each article */
+  const articles = document.querySelectorAll(optArticleSelector + customSelector);
 
   let html = '';
 
@@ -160,7 +160,7 @@ function tagClickHandler(event){
   }
 
   /* find all tag links with "href" attribute equal to the "href" constant */
-  const hrefLinks = document.querySelectorAll('a.active[href^="#tag-"]');
+  const hrefLinks = document.querySelectorAll('a[href="#tag-' + tag + '"]');
 
   /* START LOOP: for each found tag link */
   for (let hrefLink of hrefLinks){
@@ -202,15 +202,15 @@ function generateAuthors(){
     const authorWrapper = article.querySelector(optArticleAuthorSelector);
     console.log('authorWrapper', authorWrapper);
 
-    /* make html variable with empty string */
-    let html = '';
 
     /* get author from data-author attribute */
-    const articleAuthors = article.getAttribute('data-author');
-    console.log(articleAuthors);
+    const articleAuthor = article.getAttribute('data-author');
+    console.log(articleAuthor);
+
+    const link = 'by <a href=#author-' + articleAuthor + '">' + articleAuthor + '</a>';
 
     /* insert HTML of all the links into the tags wrapper */
-    authorWrapper.innerHTML = html;
+    authorWrapper.innerHTML = link;
 
     /* END LOOP: for every article: */
   }
