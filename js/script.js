@@ -42,15 +42,15 @@ const optArticleSelector = '.post',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author';
 
-function generateTitleLinks(){
+function generateTitleLinks(customSelector = ''){
 
   /* remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);
   titleList.innerHTML = '';
   console.log('titleList', titleList);
 
-  /* for each article */
-  const articles = document.querySelectorAll(optArticleSelector);
+    /* for each article */
+    const articles = document.querySelectorAll(optArticleSelector + customSelector);
 
   let html = '';
 
